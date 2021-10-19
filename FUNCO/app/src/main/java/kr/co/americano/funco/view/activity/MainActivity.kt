@@ -1,7 +1,8 @@
-package kr.co.americano.funco
+package kr.co.americano.funco.view.activity
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import kr.co.americano.funco.R
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
