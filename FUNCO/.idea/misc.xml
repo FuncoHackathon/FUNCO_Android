@@ -8,7 +8,12 @@
         <entry key="app/src/main/res/drawable/ic_home_b.xml" value="0.23333333333333334" />
         <entry key="app/src/main/res/font/airfont.xml" value="0.23333333333333334" />
         <entry key="app/src/main/res/font/mainfont.xml" value="0.23333333333333334" />
-        <entry key="app/src/main/res/layout/activity_main.xml" value="0.22970912145289307" />
+        <entry key="app/src/main/res/layout/activity_main.xml" value="0.20757389198854026" />
+        <entry key="app/src/main/res/layout/fragment_fund_info.xml" value="0.28229166666666666" />
+        <entry key="app/src/main/res/layout/fragment_fund_rank.xml" value="0.1767831597798881" />
+        <entry key="app/src/main/res/layout/fragment_home.xml" value="0.21149994055737095" />
+        <entry key="app/src/main/res/layout/fragment_profile.xml" value="0.14895833333333333" />
+        <entry key="app/src/main/res/layout/fragment_search.xml" value="0.14895833333333333" />
         <entry key="app/src/main/res/menu/bnv_main_menu.xml" value="0.19800909418400836" />
       </map>
     </option>
