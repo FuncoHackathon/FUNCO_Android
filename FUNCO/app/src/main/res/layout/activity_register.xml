@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="vm"
+            type="kr.co.americano.funco.viewmodel.activity.RegisterViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".view.activity.RegisterActivity">
+
+        <TextView
+            android:id="@+id/textView3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/mainfont"
+            android:text="@string/app_name"
+            android:textColor="@color/main"
+            android:textSize="60sp"
+            app:layout_constraintBottom_toTopOf="@+id/eidt_register_email"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <EditText
+            android:id="@+id/eidt_register_name"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:inputType="text"
+            android:background="@drawable/edittext_normal"
+            android:text="@={vm.name}"
+            android:hint="이름"
+            android:textSize="25sp"
+            android:layout_marginBottom="140dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <EditText
+            android:id="@+id/eidt_register_email"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginRight="20dp"
+            android:inputType="textEmailAddress"
+            android:background="@drawable/edittext_normal"
+            android:text="@={vm.email}"
+            android:hint="이메일"
+            android:textSize="25sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/eidt_register_name" />
+
+        <EditText
+            android:id="@+id/eidt_register_pw"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:text="@={vm.password}"
+            android:background="@drawable/edittext_normal"
+            android:inputType="textPassword"
+            android:hint="비밀번호"
+            android:textSize="25sp"
+            android:layout_marginTop="20dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/eidt_register_email" />
+
+        <EditText
+            android:id="@+id/eidt_register_check_pw"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:text="@={vm.checkPassword}"
+            android:inputType="textPassword"
+            android:background="@drawable/edittext_normal"
+            android:layout_marginTop="20dp"
+            android:hint="비밀번호 확인"
+            android:textSize="25sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/eidt_register_pw" />
+
+        <Button
+            android:layout_width="150dp"
+            android:layout_height="60dp"
+            android:backgroundTint="@color/main"
+            android:fontFamily="@font/mainfont"
+            android:onClick="@{() -> vm.onClickRegister()}"
+            android:text="회원가입"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/eidt_register_check_pw" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
