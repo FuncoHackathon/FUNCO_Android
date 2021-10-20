@@ -29,6 +29,10 @@ class RegisterActivity : AppCompatActivity() {
                 startActivity(intent)
                 Toast.makeText(this@RegisterActivity, "회원가입 성공!", Toast.LENGTH_SHORT).show()
             })
+            
+            messages.observe(this@RegisterActivity, {
+                Toast.makeText(this@RegisterActivity, "${messages.value}", Toast.LENGTH_SHORT).show()
+            })
         }
     }
 

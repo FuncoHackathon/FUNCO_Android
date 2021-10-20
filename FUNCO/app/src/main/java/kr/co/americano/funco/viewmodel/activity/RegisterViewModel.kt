@@ -20,6 +20,8 @@ class RegisterViewModel: ViewModel() {
     val password = MutableLiveData<String>()
     val checkPassword = MutableLiveData<String>()
 
+    var messages = MutableLiveData<String>()
+
     fun onClickRegister() {
         if (name.value != null && email.value != null && password.value != null && checkPassword.value != null) {
             val registerRequest = RegisterRequest(
@@ -34,15 +36,18 @@ class RegisterViewModel: ViewModel() {
                         call: Call<RegisterResponse>,
                         response: Response<RegisterResponse>
                     ) {
+                        val result = response.body()
                         if (response.isSuccessful) {
                             onRegisterEvent.call()
                             Log.d("Retrofit2", "onResponse: 성공")
                         } else {
+                            messages.value = result?.message ?: ""
                             Log.d("Retrofit2", "onResponse: ${response.errorBody()}")
                         }
                     }
 
                     override fun onFailure(call: Call<RegisterResponse>, t: Throwable) {
+                        messages.value = "서버 오류"
                         Log.d("Retrofit2", "onFailure: $t")
                     }
 

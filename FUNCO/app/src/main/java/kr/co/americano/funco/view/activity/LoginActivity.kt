@@ -1,5 +1,6 @@
 package kr.co.americano.funco.view.activity
 
+import android.content.Context
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -13,6 +14,10 @@ class LoginActivity : AppCompatActivity() {
     lateinit var binding: ActivityLoginBinding
     lateinit var loginViewModel: LoginViewModel
 
+    companion object {
+        const val TOKEN_PREFERENCE = "TOKEN_PREFERENCES"
+    }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         performDataBinding()
@@ -21,6 +26,21 @@ class LoginActivity : AppCompatActivity() {
             onRegisterEvent.observe(this@LoginActivity, {
                 val intent = Intent(this@LoginActivity, RegisterActivity::class.java)
                 startActivity(intent)
+            })
+
+            token.observe(this@LoginActivity, {
+                val sharedPref = applicationContext.getSharedPreferences(TOKEN_PREFERENCE, Context.MODE_PRIVATE)
+
+                with(sharedPref.edit()) {
+                    putString("token", it)
+                    apply()
+                }
+            })
+
+            onLoginEvent.observe(this@LoginActivity, {
+                val intent = Intent(this@LoginActivity, MainActivity::class.java)
+                startActivity(intent)
+                finish()
             })
         }
     }
