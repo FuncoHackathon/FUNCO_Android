@@ -8,23 +8,22 @@ import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.ViewModelProvider
 import kr.co.americano.funco.R
-import kr.co.americano.funco.databinding.ActivityMainBinding
-import kr.co.americano.funco.databinding.FragmentHomeBinding
-import kr.co.americano.funco.databinding.FragmentSearchBinding
+import kr.co.americano.funco.databinding.*
+import kr.co.americano.funco.viewmodel.fragment.FundInfoViewModel
+import kr.co.americano.funco.viewmodel.fragment.FundRankViewModel
 import kr.co.americano.funco.viewmodel.fragment.HomeViewModel
-import kr.co.americano.funco.viewmodel.fragment.SearchViewModel
 
-class SearchFragment : Fragment() {
-    lateinit var binding: FragmentSearchBinding
-    lateinit var searchViewModel: SearchViewModel
+class FundInfoFragment : Fragment() {
+    lateinit var binding: FragmentFundInfoBinding
+    lateinit var fundInfoViewModel: FundInfoViewModel
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        binding = DataBindingUtil.inflate<FragmentSearchBinding>(
+        binding = DataBindingUtil.inflate<FragmentFundInfoBinding>(
             inflater,
-            R.layout.fragment_search,
+            R.layout.fragment_fund_info,
             container,
             false
         )
@@ -34,8 +33,8 @@ class SearchFragment : Fragment() {
     }
 
     private fun performViewModel() {
-        searchViewModel = ViewModelProvider(this).get(SearchViewModel::class.java)
-        binding.vm = searchViewModel
+        fundInfoViewModel = ViewModelProvider(this).get(FundInfoViewModel::class.java)
+        binding.vm = fundInfoViewModel
         binding.lifecycleOwner = this
         binding.executePendingBindings()
     }

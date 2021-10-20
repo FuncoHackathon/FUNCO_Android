@@ -16,7 +16,7 @@ import kr.co.americano.funco.viewmodel.fragment.ProfileViewModel
 
 class ProfileFragment : Fragment() {
     lateinit var binding: FragmentProfileBinding
-    lateinit var homeViewModel: ProfileViewModel
+    lateinit var profileViewModel: ProfileViewModel
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -34,8 +34,8 @@ class ProfileFragment : Fragment() {
     }
 
     private fun performViewModel() {
-        homeViewModel = ViewModelProvider(this).get(ProfileViewModel::class.java)
-        binding.vm = homeViewModel
+        profileViewModel = ViewModelProvider(this).get(ProfileViewModel::class.java)
+        binding.vm = profileViewModel
         binding.lifecycleOwner = this
         binding.executePendingBindings()
     }

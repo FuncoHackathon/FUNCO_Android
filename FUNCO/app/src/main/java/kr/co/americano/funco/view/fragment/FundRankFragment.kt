@@ -9,22 +9,23 @@ import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.ViewModelProvider
 import kr.co.americano.funco.R
 import kr.co.americano.funco.databinding.ActivityMainBinding
+import kr.co.americano.funco.databinding.FragmentFundRankBinding
 import kr.co.americano.funco.databinding.FragmentHomeBinding
 import kr.co.americano.funco.databinding.FragmentSearchBinding
+import kr.co.americano.funco.viewmodel.fragment.FundRankViewModel
 import kr.co.americano.funco.viewmodel.fragment.HomeViewModel
-import kr.co.americano.funco.viewmodel.fragment.SearchViewModel
 
-class SearchFragment : Fragment() {
-    lateinit var binding: FragmentSearchBinding
-    lateinit var searchViewModel: SearchViewModel
+class FundRankFragment : Fragment() {
+    lateinit var binding: FragmentFundRankBinding
+    lateinit var fundRankViewModel: FundRankViewModel
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        binding = DataBindingUtil.inflate<FragmentSearchBinding>(
+        binding = DataBindingUtil.inflate<FragmentFundRankBinding>(
             inflater,
-            R.layout.fragment_search,
+            R.layout.fragment_fund_rank,
             container,
             false
         )
@@ -34,8 +35,8 @@ class SearchFragment : Fragment() {
     }
 
     private fun performViewModel() {
-        searchViewModel = ViewModelProvider(this).get(SearchViewModel::class.java)
-        binding.vm = searchViewModel
+        fundRankViewModel = ViewModelProvider(this).get(FundRankViewModel::class.java)
+        binding.vm = fundRankViewModel
         binding.lifecycleOwner = this
         binding.executePendingBindings()
     }
