@@ -10,7 +10,8 @@
         android:label="@string/app_name"
         android:roundIcon="@drawable/logo"
         android:supportsRtl="true"
-        android:theme="@style/Theme.FUNCO">
+        android:theme="@style/Theme.FUNCO"
+        android:usesCleartextTraffic="true">
         <activity
             android:name=".view.activity.RegisterActivity"
             android:exported="false" />

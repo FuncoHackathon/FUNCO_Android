@@ -6,6 +6,6 @@ import retrofit2.http.Body
 import retrofit2.http.POST
 
 interface Register {
-    @POST("join")
+    @POST("users/join")
     fun register(@Body registerRequest: RegisterRequest) : retrofit2.Call<RegisterResponse>
 }
