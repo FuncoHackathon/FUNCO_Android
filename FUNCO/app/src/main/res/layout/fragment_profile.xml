@@ -16,14 +16,14 @@
 
         <com.google.android.material.floatingactionbutton.FloatingActionButton
             android:id="@+id/fab_add"
-            android:layout_width="80dp"
-            android:layout_height="80dp"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
             android:scaleType="center"
             android:onClick="@{() -> vm.onClickAddPost()}"
             android:layout_marginBottom="20dp"
             android:layout_marginRight="20dp"
             android:backgroundTint="@color/main"
-            app:fabCustomSize="82dp"
+            app:fabCustomSize="72dp"
             android:src="@drawable/ic_btn_add"
             app:maxImageSize="30dp"
             app:layout_constraintBottom_toBottomOf="parent"

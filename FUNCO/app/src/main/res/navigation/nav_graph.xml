@@ -31,5 +31,11 @@
     <fragment
         android:id="@+id/postFragment"
         android:name="kr.co.americano.funco.view.fragment.PostFragment"
-        android:label="PostFragment" />
+        android:label="PostFragment" >
+        <action
+            android:id="@+id/action_postFragment_to_ProfileFragment"
+            app:destination="@id/ProfileFragment"
+            app:popUpTo="@id/nav_graph"
+            app:popUpToInclusive="true" />
+    </fragment>
 </navigation>

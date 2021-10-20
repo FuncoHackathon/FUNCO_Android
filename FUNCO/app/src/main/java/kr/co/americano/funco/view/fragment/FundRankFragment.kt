@@ -12,12 +12,18 @@ import kr.co.americano.funco.databinding.ActivityMainBinding
 import kr.co.americano.funco.databinding.FragmentFundRankBinding
 import kr.co.americano.funco.databinding.FragmentHomeBinding
 import kr.co.americano.funco.databinding.FragmentSearchBinding
+import kr.co.americano.funco.view.activity.MainActivity
 import kr.co.americano.funco.viewmodel.fragment.FundRankViewModel
 import kr.co.americano.funco.viewmodel.fragment.HomeViewModel
 
 class FundRankFragment : Fragment() {
     lateinit var binding: FragmentFundRankBinding
     lateinit var fundRankViewModel: FundRankViewModel
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        (activity as? MainActivity)?.setNavVisible(true)
+    }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,

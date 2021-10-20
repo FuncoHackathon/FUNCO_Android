@@ -13,12 +13,18 @@ import kr.co.americano.funco.R
 import kr.co.americano.funco.databinding.ActivityMainBinding
 import kr.co.americano.funco.databinding.FragmentHomeBinding
 import kr.co.americano.funco.databinding.FragmentProfileBinding
+import kr.co.americano.funco.view.activity.MainActivity
 import kr.co.americano.funco.viewmodel.fragment.HomeViewModel
 import kr.co.americano.funco.viewmodel.fragment.ProfileViewModel
 
 class ProfileFragment : Fragment() {
     lateinit var binding: FragmentProfileBinding
     lateinit var profileViewModel: ProfileViewModel
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        (activity as? MainActivity)?.setNavVisible(true)
+    }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,

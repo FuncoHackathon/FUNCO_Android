@@ -2,6 +2,7 @@ package kr.co.americano.funco.view.activity
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.View
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.NavHostFragment
@@ -34,5 +35,15 @@ class MainActivity : AppCompatActivity() {
         val navController = navHostFragment.navController
         binding.bnvMain
             .setupWithNavController(navController)
+    }
+
+    fun setNavVisible(isMainFragment: Boolean) {
+        binding.appbarHome.visibility = if(isMainFragment) View.VISIBLE else View.GONE
+        binding.bnvMain.visibility = if(isMainFragment) View.VISIBLE else View.GONE
+    }
+
+    fun setAppBarVisible(isSearchFragment: Boolean) {
+        binding.appbarHome.visibility = if(isSearchFragment) View.GONE else View.VISIBLE
+        binding.bnvMain.visibility = if (isSearchFragment) View.VISIBLE else View.VISIBLE
     }
 }

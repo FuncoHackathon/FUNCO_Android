@@ -22,10 +22,11 @@
             app:layout_constraintTop_toTopOf="parent">
 
             <ImageButton
-                android:id="@+id/btn_back_home"
+                android:id="@+id/btn_back_main"
                 android:layout_width="25dp"
                 android:layout_height="35dp"
                 android:layout_margin="10dp"
+                android:onClick="@{() -> vm.onClickBack()}"
                 android:background="@drawable/ic_btn_back"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -39,7 +40,7 @@
                 android:textColor="@color/black"
                 android:textSize="20sp"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintStart_toEndOf="@+id/btn_back_home"
+                app:layout_constraintStart_toEndOf="@+id/btn_back_main"
                 app:layout_constraintTop_toTopOf="parent" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
