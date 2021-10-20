@@ -9,6 +9,8 @@ import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.ViewModelProvider
 import kr.co.americano.funco.R
 import kr.co.americano.funco.databinding.*
+import kr.co.americano.funco.network.model.FundInfo
+import kr.co.americano.funco.view.adapter.RecyclerFundInfoAdapter
 import kr.co.americano.funco.viewmodel.fragment.FundInfoViewModel
 import kr.co.americano.funco.viewmodel.fragment.FundRankViewModel
 import kr.co.americano.funco.viewmodel.fragment.HomeViewModel
@@ -27,8 +29,8 @@ class FundInfoFragment : Fragment() {
             container,
             false
         )
-
         performViewModel()
+        initRecycler()
         return binding.root
     }
 
@@ -37,5 +39,27 @@ class FundInfoFragment : Fragment() {
         binding.vm = fundInfoViewModel
         binding.lifecycleOwner = this
         binding.executePendingBindings()
+    }
+
+    private fun initRecycler() {
+        var fundInfoList = ArrayList<FundInfo>()
+        val recyclerFundInfoAdapter = RecyclerFundInfoAdapter(viewLifecycleOwner)
+        binding.fundInfoRecycler.adapter = recyclerFundInfoAdapter
+
+        fundInfoList.apply {
+            add(FundInfo("https://image.msscdn.net/data/curating/16948/16948_1_org.jpg", "칫솔 칫솔 칫솔 하", "143% 달성"))
+            add(FundInfo("https://image.msscdn.net/data/curating/16948/16948_1_org.jpg", "칫솔 칫솔 칫솔 하", "143% 달성"))
+            add(FundInfo("https://image.msscdn.net/data/curating/16948/16948_1_org.jpg", "칫솔 칫솔 칫솔 하", "143% 달성"))
+            add(FundInfo("https://image.msscdn.net/data/curating/16948/16948_1_org.jpg", "칫솔 칫솔 칫솔 하", "143% 달성"))
+            add(FundInfo("https://image.msscdn.net/data/curating/16948/16948_1_org.jpg", "칫솔 칫솔 칫솔 하", "143% 달성"))
+            add(FundInfo("https://image.msscdn.net/data/curating/16948/16948_1_org.jpg", "칫솔 칫솔 칫솔 하", "143% 달성"))
+            add(FundInfo("https://image.msscdn.net/data/curating/16948/16948_1_org.jpg", "칫솔 칫솔 칫솔 하", "143% 달성"))
+            add(FundInfo("https://image.msscdn.net/data/curating/16948/16948_1_org.jpg", "칫솔 칫솔 칫솔 하", "143% 달성"))
+            add(FundInfo("https://image.msscdn.net/data/curating/16948/16948_1_org.jpg", "칫솔 칫솔 칫솔 하", "143% 달성"))
+            add(FundInfo("https://image.msscdn.net/data/curating/16948/16948_1_org.jpg", "칫솔 칫솔 칫솔 하", "143% 달성"))
+        }
+
+        recyclerFundInfoAdapter.fundInfoList = fundInfoList
+        recyclerFundInfoAdapter.notifyDataSetChanged()
     }
 }
