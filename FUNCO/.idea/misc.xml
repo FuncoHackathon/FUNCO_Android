@@ -5,6 +5,7 @@
       <map>
         <entry key="app/src/main/res/drawable/bnv_selector_color.xml" value="0.23333333333333334" />
         <entry key="app/src/main/res/drawable/edittext_normal.xml" value="0.16510416666666666" />
+        <entry key="app/src/main/res/drawable/ic_btn_add.xml" value="0.16510416666666666" />
         <entry key="app/src/main/res/drawable/ic_btn_home.xml" value="0.23333333333333334" />
         <entry key="app/src/main/res/drawable/ic_btn_profile.xml" value="0.16510416666666666" />
         <entry key="app/src/main/res/drawable/ic_home_b.xml" value="0.23333333333333334" />
@@ -16,15 +17,13 @@
         <entry key="app/src/main/res/layout/fragment_fund_info.xml" value="0.12128183135225187" />
         <entry key="app/src/main/res/layout/fragment_fund_rank.xml" value="0.1767831597798881" />
         <entry key="app/src/main/res/layout/fragment_home.xml" value="0.21149994055737095" />
+        <entry key="app/src/main/res/layout/fragment_post.xml" value="0.14806373526387626" />
         <entry key="app/src/main/res/layout/fragment_profile.xml" value="0.14895833333333333" />
         <entry key="app/src/main/res/layout/fragment_search.xml" value="0.14895833333333333" />
         <entry key="app/src/main/res/layout/recycler_fund_info_item.xml" value="0.25" />
         <entry key="app/src/main/res/menu/bnv_main_menu.xml" value="0.19800909418400836" />
       </map>
     </option>
-  </component>
-  <component name="ProjectPlainTextFileTypeManager">
-    <file url="file://$PROJECT_DIR$/app/src/main/java/kr/co/americano/funco/viewmodel/fragment/SearchViewModel 2.kt" />
   </component>
   <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/build/classes" />

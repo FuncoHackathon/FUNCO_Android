@@ -7,6 +7,8 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.fragment.NavHostFragment.findNavController
+import androidx.navigation.fragment.findNavController
 import kr.co.americano.funco.R
 import kr.co.americano.funco.databinding.ActivityMainBinding
 import kr.co.americano.funco.databinding.FragmentHomeBinding
@@ -28,8 +30,13 @@ class ProfileFragment : Fragment() {
             container,
             false
         )
-
         performViewModel()
+
+        with(profileViewModel) {
+            onPostEvent.observe(this@ProfileFragment, {
+                findNavController().navigate(R.id.action_ProfileFragment_to_postFragment)
+            })
+        }
         return binding.root
     }
 
