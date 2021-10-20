@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.ViewModelProvider
+import com.google.android.material.tabs.TabLayout
 import kr.co.americano.funco.R
 import kr.co.americano.funco.databinding.ActivityMainBinding
 import kr.co.americano.funco.databinding.FragmentHomeBinding
@@ -26,8 +27,32 @@ class HomeFragment : Fragment() {
             container,
             false
         )
-
         performViewModel()
+
+
+        // home tabLayout operate
+        binding.tabMain.addOnTabSelectedListener(object : TabLayout.OnTabSelectedListener {
+            override fun onTabSelected(tab: TabLayout.Tab?) {
+                val transaction = childFragmentManager.beginTransaction()
+                when (tab?.text) {
+                    "펀딩 랭킹" -> {
+                        transaction.replace(R.id.main_tap_content, FundRankFragment())
+                    }
+                    "펀딩 정보" -> {
+                        transaction.replace(R.id.main_tap_content, FundInfoFragment())
+                    }
+                }
+                transaction.commit()
+            }
+
+            override fun onTabUnselected(tab: TabLayout.Tab?) {
+            }
+
+            override fun onTabReselected(tab: TabLayout.Tab?) {
+            }
+
+        })
+
         return binding.root
     }
 
