@@ -2,6 +2,7 @@ package kr.co.americano.funco.view.fragment
 
 import android.app.Activity
 import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
 import android.provider.MediaStore
 import androidx.fragment.app.Fragment
@@ -21,6 +22,7 @@ import kr.co.americano.funco.viewmodel.fragment.FundInfoViewModel
 import kr.co.americano.funco.viewmodel.fragment.FundRankViewModel
 import kr.co.americano.funco.viewmodel.fragment.HomeViewModel
 import kr.co.americano.funco.viewmodel.fragment.PostViewModel
+import java.io.File
 
 class PostFragment : Fragment() {
     lateinit var binding: FragmentPostBinding
@@ -70,7 +72,8 @@ class PostFragment : Fragment() {
 
         if (requestCode == 10 && resultCode == Activity.RESULT_OK) {
             data?.data?.let { uri ->
-                val imageUri: android.net.Uri? = data.data
+                val imageUri: Uri? = data.data
+                postViewModel.img.value?.add( File(imageUri?.let { getRealPathFromURI(it).path }))
                 if (imageUri != null) {
                     Glide.with(binding.root)
                         .load(imageUri)
@@ -80,5 +83,15 @@ class PostFragment : Fragment() {
                 }
             }
         }
+    }
+
+    private fun getRealPathFromURI(uri: Uri): Uri {
+        val filePathColumn = arrayOf(MediaStore.Images.Media.DATA)
+        val cursor = context?.contentResolver?.query(uri, filePathColumn, null, null, null)
+        cursor?.moveToFirst()
+        val columnIndex = cursor?.getColumnIndex(filePathColumn[0])
+        val picturePath = columnIndex?.let { cursor.getString(it) }
+        cursor?.close()
+        return Uri.fromFile(File(picturePath ?: ""))
     }
 }

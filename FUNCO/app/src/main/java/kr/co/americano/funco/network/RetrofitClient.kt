@@ -2,6 +2,7 @@ package kr.co.americano.funco.network
 
 import com.google.gson.GsonBuilder
 import kr.co.americano.funco.network.api.Login
+import kr.co.americano.funco.network.api.Posting
 import kr.co.americano.funco.network.api.Register
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
@@ -15,7 +16,7 @@ object RetrofitClient {
 
     val registerInterface: Register
     val loginInterface: Login
-
+    val postingInterface: Posting
     init {
         val gson = GsonBuilder().setLenient().create()
 
@@ -37,5 +38,6 @@ object RetrofitClient {
 
         registerInterface = instance.create(Register::class.java)
         loginInterface = instance.create(Login::class.java)
+        postingInterface = instance.create(Posting::class.java)
     }
 }
