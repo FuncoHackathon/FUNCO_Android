@@ -10,4 +10,6 @@ interface Posting {
     @Multipart
     @POST("fundings/upload/img")
     fun firstPosting(@Part img: List<MultipartBody.Part>?) : retrofit2.Call<FirstPostingResponse>
+
+    @POST("fundings")
 }

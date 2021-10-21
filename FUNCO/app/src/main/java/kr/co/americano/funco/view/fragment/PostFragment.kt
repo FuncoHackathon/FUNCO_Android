@@ -56,6 +56,10 @@ class PostFragment : Fragment() {
                 intent.type = "image/*"
                 startActivityForResult(intent, 10)
             })
+
+            onPostingEvent.observe(this@PostFragment, {
+                findNavController().navigate(R.id.action_postFragment_to_ProfileFragment)
+            })
         }
         return binding.root
     }
