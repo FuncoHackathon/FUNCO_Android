@@ -1,6 +1,9 @@
 package kr.co.americano.funco.view.fragment
 
+import android.app.Activity
+import android.content.Intent
 import android.os.Bundle
+import android.provider.MediaStore
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -8,6 +11,7 @@ import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
+import com.bumptech.glide.Glide
 import kr.co.americano.funco.R
 import kr.co.americano.funco.databinding.*
 import kr.co.americano.funco.network.model.FundInfo
@@ -44,6 +48,12 @@ class PostFragment : Fragment() {
             onBackEvent.observe(this@PostFragment, {
                 findNavController().navigate(R.id.action_postFragment_to_ProfileFragment)
             })
+
+            onAddImageEvent.observe(this@PostFragment, {
+                val intent = Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI)
+                intent.type = "image/*"
+                startActivityForResult(intent, 10)
+            })
         }
         return binding.root
     }
@@ -53,5 +63,22 @@ class PostFragment : Fragment() {
         binding.vm = postViewModel
         binding.lifecycleOwner = this
         binding.executePendingBindings()
+    }
+
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        super.onActivityResult(requestCode, resultCode, data)
+
+        if (requestCode == 10 && resultCode == Activity.RESULT_OK) {
+            data?.data?.let { uri ->
+                val imageUri: android.net.Uri? = data.data
+                if (imageUri != null) {
+                    Glide.with(binding.root)
+                        .load(imageUri)
+                        .error(R.drawable.ic_no_image)
+                        .centerCrop()
+                        .into(binding.ivMainImage)
+                }
+            }
+        }
     }
 }
