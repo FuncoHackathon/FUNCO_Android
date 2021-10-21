@@ -15,6 +15,7 @@
         tools:context=".view.fragment.HomeFragment">
 
         <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/constraintLayout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             app:layout_constraintEnd_toEndOf="parent"
@@ -26,8 +27,8 @@
                 android:layout_width="25dp"
                 android:layout_height="35dp"
                 android:layout_margin="10dp"
-                android:onClick="@{() -> vm.onClickBack()}"
                 android:background="@drawable/ic_btn_back"
+                android:onClick="@{() -> vm.onClickBack()}"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
@@ -36,6 +37,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="10dp"
+                android:fontFamily="@font/airfont"
                 android:text="펀딩 올리기"
                 android:textColor="@color/black"
                 android:textSize="20sp"
@@ -44,5 +46,205 @@
                 app:layout_constraintTop_toTopOf="parent" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <ScrollView
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/constraintLayout">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical" >
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:text="프로젝트의 성공 조건 &amp; 수수료 안내"
+                    android:textStyle="bold"
+                    android:textColor="@color/black"
+                    android:textSize="17sp"
+                    android:layout_marginLeft="10dp" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="프로젝트 종료일 기준 모금액이 목표금액의 100% 이상인 경우에만 프로젝트가 성공하게 됩니다.
+프로젝트가 성공한 경우, 크라우디는 모금액에서 수수료를 제한 금액을 정산해드립니다."
+                    android:textStyle="bold"
+                    android:textSize="13sp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginLeft="10dp" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="프로젝트의 제목을 적어주세요"
+                    android:textStyle="bold"
+                    android:textColor="@color/black"
+                    android:layout_marginTop="20dp"
+                    android:textSize="17sp"
+                    android:layout_marginLeft="10dp" />
+
+                <EditText
+                    android:id="@+id/edit_title"
+                    android:layout_width="match_parent"
+                    android:layout_height="30dp"
+                    android:background="@drawable/edittext_normal"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="10dp"
+                    android:hint="핵심 내용을 담고 간결한 제목을 정해주세요." />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="목표 금액을 적어주세요"
+                    android:textStyle="bold"
+                    android:textColor="@color/black"
+                    android:layout_marginTop="20dp"
+                    android:textSize="17sp"
+                    android:layout_marginLeft="10dp" />
+
+                <EditText
+                    android:id="@+id/edit_cost"
+                    android:layout_width="match_parent"
+                    android:layout_height="30dp"
+                    android:background="@drawable/edittext_normal"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="10dp"
+                    android:hint="최소 100,000원 이상이어야 합니다." />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="프로젝트의 마감일을 적어주세요"
+                    android:textStyle="bold"
+                    android:textColor="@color/black"
+                    android:layout_marginTop="20dp"
+                    android:textSize="17sp"
+                    android:layout_marginLeft="10dp" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginRight="10dp"
+                    android:orientation="horizontal">
+
+                    <EditText
+                        android:id="@+id/edit_year"
+                        android:layout_width="100dp"
+                        android:layout_height="30dp"
+                        android:layout_weight="1"
+                        android:inputType="number"
+                        android:background="@drawable/edittext_normal"
+                        android:hint="년" />
+
+                    <EditText
+                        android:id="@+id/edit_month"
+                        android:layout_width="100dp"
+                        android:layout_height="30dp"
+                        android:layout_weight="1"
+                        android:inputType="number"
+                        android:hint="월"
+                        android:background="@drawable/edittext_normal" />
+
+                    <EditText
+                        android:id="@+id/edit_day"
+                        android:layout_width="100dp"
+                        android:layout_height="30dp"
+                        android:layout_weight="1"
+                        android:inputType="number"
+                        android:hint="일"
+                        android:background="@drawable/edittext_normal" />
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="프로젝트 대표 이미지를 등록해주세요"
+                    android:layout_marginTop="20dp"
+                    android:textStyle="bold"
+                    android:textColor="@color/black"
+                    android:textSize="17sp"
+                    android:layout_marginLeft="10dp" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="홈페이지와 외부 공유를 했을 때 보여집니다. 프로젝트를 한 눈에 나타낼 수 있는 이미지를 등록해주세요."
+                    android:textStyle="bold"
+                    android:textSize="13sp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginLeft="10dp" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <ImageButton
+                        android:id="@+id/btn_add_image"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:layout_margin="40dp"
+                        android:background="@drawable/ic_btn_add_image" />
+
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="200dp"
+                        android:layout_height="120dp"
+                        android:layout_gravity="center_vertical"
+                        app:cardCornerRadius="10dp" >
+
+                        <ImageView
+                            android:id="@+id/iv_main_image"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:src="@drawable/ic_no_image" />
+
+                    </androidx.cardview.widget.CardView>
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="프로젝트 스토리를 적어주세요"
+                    android:textStyle="bold"
+                    android:textColor="@color/black"
+                    android:layout_marginTop="20dp"
+                    android:textSize="17sp"
+                    android:layout_marginLeft="10dp" />
+
+                <EditText
+                    android:id="@+id/edit_story"
+                    android:layout_width="match_parent"
+                    android:layout_height="30dp"
+                    android:background="@drawable/edittext_normal"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="10dp"
+                    android:hint="당신의 프로젝트가 저희의 미래가 되길" />
+
+                <Button
+                    android:id="@+id/btn_post"
+                    android:layout_width="130dp"
+                    android:layout_height="60dp"
+                    android:backgroundTint="@color/main"
+                    android:text="제출하기"
+                    android:fontFamily="@font/mainfont"
+                    android:textColor="@color/white"
+                    android:layout_marginBottom="50dp"
+                    android:textSize="20sp"
+                    android:layout_marginTop="50dp"
+                    android:layout_gravity="center_horizontal" />
+            </LinearLayout>
+        </ScrollView>
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

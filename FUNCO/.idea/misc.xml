@@ -6,6 +6,7 @@
         <entry key="app/src/main/res/drawable/bnv_selector_color.xml" value="0.23333333333333334" />
         <entry key="app/src/main/res/drawable/edittext_normal.xml" value="0.16510416666666666" />
         <entry key="app/src/main/res/drawable/ic_btn_add.xml" value="0.16510416666666666" />
+        <entry key="app/src/main/res/drawable/ic_btn_add_image.xml" value="0.23055555555555557" />
         <entry key="app/src/main/res/drawable/ic_btn_home.xml" value="0.23333333333333334" />
         <entry key="app/src/main/res/drawable/ic_btn_profile.xml" value="0.16510416666666666" />
         <entry key="app/src/main/res/drawable/ic_home_b.xml" value="0.23333333333333334" />
@@ -17,7 +18,7 @@
         <entry key="app/src/main/res/layout/fragment_fund_info.xml" value="0.12128183135225187" />
         <entry key="app/src/main/res/layout/fragment_fund_rank.xml" value="0.1767831597798881" />
         <entry key="app/src/main/res/layout/fragment_home.xml" value="0.21149994055737095" />
-        <entry key="app/src/main/res/layout/fragment_post.xml" value="0.14806373526387626" />
+        <entry key="app/src/main/res/layout/fragment_post.xml" value="0.2748055852374123" />
         <entry key="app/src/main/res/layout/fragment_profile.xml" value="0.14895833333333333" />
         <entry key="app/src/main/res/layout/fragment_search.xml" value="0.14895833333333333" />
         <entry key="app/src/main/res/layout/recycler_fund_info_item.xml" value="0.25" />
