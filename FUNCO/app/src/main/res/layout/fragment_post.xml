@@ -98,6 +98,7 @@
                     android:layout_marginRight="10dp"
                     android:layout_marginLeft="10dp"
                     android:layout_marginTop="10dp"
+                    android:text="@={vm.title}"
                     android:hint="핵심 내용을 담고 간결한 제목을 정해주세요." />
 
                 <TextView
@@ -118,6 +119,7 @@
                     android:layout_marginRight="10dp"
                     android:layout_marginLeft="10dp"
                     android:layout_marginTop="10dp"
+                    android:text="@={vm.goal}"
                     android:hint="최소 100,000원 이상이어야 합니다." />
 
                 <TextView
@@ -144,6 +146,7 @@
                         android:layout_height="30dp"
                         android:layout_weight="1"
                         android:inputType="number"
+                        android:text="@={vm.closingYear}"
                         android:background="@drawable/edittext_normal"
                         android:hint="년" />
 
@@ -153,6 +156,7 @@
                         android:layout_height="30dp"
                         android:layout_weight="1"
                         android:inputType="number"
+                        android:text="@={vm.closingMonth}"
                         android:hint="월"
                         android:background="@drawable/edittext_normal" />
 
@@ -162,6 +166,7 @@
                         android:layout_height="30dp"
                         android:layout_weight="1"
                         android:inputType="number"
+                        android:text="@={vm.closingDay}"
                         android:hint="일"
                         android:background="@drawable/edittext_normal" />
                 </LinearLayout>
@@ -231,6 +236,7 @@
                     android:layout_marginRight="10dp"
                     android:layout_marginLeft="10dp"
                     android:layout_marginTop="10dp"
+                    android:text="@={vm.story}"
                     android:hint="당신의 프로젝트가 저희의 미래가 되길" />
 
                 <Button
