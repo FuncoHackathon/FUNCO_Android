@@ -3,6 +3,8 @@
     package="kr.co.americano.funco">
 
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 
     <application
         android:name=".network.MyApp"
@@ -14,10 +16,7 @@
         android:theme="@style/Theme.FUNCO"
         android:usesCleartextTraffic="true">
         <activity
-            android:name=".view.activity.RegisterActivity"
-            android:exported="false" />
-        <activity
-            android:name=".view.activity.LoginActivity"
+            android:name=".view.activity.StartActivity"
             android:exported="true" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -26,8 +25,15 @@
             </intent-filter>
         </activity>
         <activity
+            android:name=".view.activity.RegisterActivity"
+            android:exported="false" />
+        <activity
+            android:name=".view.activity.LoginActivity"
+            android:exported="true"></activity>
+        <activity
             android:name=".view.activity.MainActivity"
             android:exported="true">
+
         </activity>
     </application>
 
